@@ -1,0 +1,41 @@
+html, body{
+    overflow: hidden;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.masterdiv{
+    height: 100%;
+    width: 100%;
+}
+
+.topbar{
+    height: 15%;
+    width: 100%;
+    background-color: brown;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title{
+    margin: 0;
+    margin-left: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.addbook{
+    margin-right: 5%;
+    height: 35%;
+    width: 20%;
+    border-radius: 2%;
+    border: none;
+}
+
+.library{
+    height: 85%;
+    width: 100%;
+    background-color:rgb(245, 255, 255);
+}
