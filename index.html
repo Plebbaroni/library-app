@@ -11,10 +11,34 @@
     <div class="masterdiv">
         <div class="topbar">
             <h1 class="title">A Library.</h1>
-            <button id="add" class="addbook"> Add Book</button>
-            
         </div>
-        <div class="library"></div>
+        <div class="content">
+            <div class="library">
+                <div class="book">
+                    <div class="bookinfo">
+                        <p class="booktitle">Title</p>
+                        <p class="author">Author | N pages</p>
+                    </div>
+                    <div class="bookbuttons">
+                        <button id="read" class="readbutton">Read</button>
+                        <button id="delete" class="deletebutton">Delete</button>
+                    </div>
+                </div>
+            </div>
+            <div class="addbar">
+                <div class="addform">
+                    <form action="" id="form">
+                        <p>Title</p>
+                        <input type="text" name="Title">
+                        <p>Author</p>
+                        <input type="text" name="Author">
+                        <p>Pages</p>
+                        <input type="number">
+                    </form>
+                    <button type="submit" id="add" class="addbook" form="form"> Add Book</button>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="index.js"></script>
 </body>

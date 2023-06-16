@@ -16,27 +16,98 @@ html, body{
     background-color: brown;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     border-bottom: 2px solid black;
 }
 
 .title{
     margin: 0;
-    margin-left: 5%;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
 
-.addbook{
-    margin-right: 5%;
-    height: 35%;
-    width: 20%;
+.content{
+    height: 85%;
+    width: 100%;
+    display: flex;
+}
+
+.library{
+    overflow-y: scroll;
+    height: 100%;
+    width: 75%;
+    background-color:rgb(245, 255, 255);
+    display: grid;
+}
+
+.book{
+    height: 15%;
+    width: 95%;
+    margin: 2%;
+    border: 2px solid black;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bookinfo{
+    width: 30%;
+}
+
+.bookinfo p{
+    margin: 0;
+    margin-left: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bookbuttons{
+    margin-right: 1%;
+    height: 100%;
+    width: 40%;
+    border: none;
+    margin: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bookbuttons button{
+    height: 20%;
+    width: 45%;
     border-radius: 10px;
     border: none;
 }
 
-.library{
-    height: 85%;
-    width: 100%;
-    background-color:rgb(245, 255, 255);
+.booktitle{
+    white-space: normal;
+    text-align: justify;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: none;
+}
+
+.addbar{
+    height: 100%;
+    width: 25%;
+    border-left: 2px solid black;
+    padding: 1%;
+}
+
+.addbar p{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.addbar input{
+    width: 80%;
+    margin-bottom: 1%;
+}
+
+.addbook{
+    height: 35%;
+    width: 20%;
+    border-radius: 10px;
+    border: none;
 }
