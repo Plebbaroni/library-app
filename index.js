@@ -9,7 +9,7 @@ class Book{
 
 class Library{
     constructor(){
-        this.Library = [];
+        this.books = [];
     }
 
     addBookToLibrary(newBook){
@@ -25,7 +25,7 @@ const myLibrary = new Library();
 
 const readButton = document.getElementById('read');
 const deleteButton = document.getElementById('delete');
-const addButton = document.getElementById('add');
+const addButton = document.getElementById('form');
 
 function formToBook(){
     const title = document.getElementById('title').value;
@@ -35,14 +35,14 @@ function formToBook(){
     return new Book(title, author, pages);
 }
 
-addButton.onsubmit = addBook;
-
-const addBook = (e) =>{
+const addBookToLibrary = (e) =>{
     e.preventDefault();
     const newBook = formToBook();
     myLibrary.addBookToLibrary(newBook);
     updateBooks();
 }
+
+addButton.onsubmit = addBookToLibrary;
 
 function createBook(book){
     const bookElem = document.createElement('div');
