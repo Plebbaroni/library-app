@@ -17,6 +17,7 @@ html, body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 2px solid black;
 }
 
 .title{
@@ -30,7 +31,7 @@ html, body{
     margin-right: 5%;
     height: 35%;
     width: 20%;
-    border-radius: 2%;
+    border-radius: 10px;
     border: none;
 }
 
