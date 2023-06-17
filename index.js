@@ -16,8 +16,9 @@ class Library{
         this.books.push(newBook);
     }
 
-    removeBook(book){
-        this.Library.splice(book, 1);
+    deleteBook(book){
+        console.log(`${book}`);
+        this.books.splice(book, 1);
     }
 }
 
@@ -40,7 +41,21 @@ const addBookToLibrary = (e) =>{
     e.preventDefault();
     const newBook = formToBook();
     myLibrary.addBookToLibrary(newBook);
-    console.log(`${myLibrary.books[0].title}`);
+    updateBooks();
+}
+
+function filterBook(title){
+    for (book of myLibrary.books){
+        if(book.title === title){
+            return myLibrary.books.indexOf(book);
+        }
+    }
+}
+
+const deleteBook = (e) => {
+    const deleteId = e.target.parentNode.parentNode.firstChild.firstChild.textContent;
+    console.log(`${filterBook(deleteId)}`);
+    myLibrary.deleteBook(filterBook(deleteId));
     updateBooks();
 }
 
@@ -60,12 +75,12 @@ function createBook(book){
     bookButtons.classList.add('bookbuttons');
     bookTitle.classList.add('booktitle');
     bookInfo.classList.add('author');
-    //readButtonElem.onclick = 
-    //deleteButtonElem.onclick;
+    //readButtonElem.onclick
+    deleteButtonElem.onclick = deleteBook;
 
     bookTitle.textContent = `${book.title}`;
     bookInfo.textContent = `${book.author} | ${book.pages} pages`;
-
+    deleteButtonElem.textContent = "Delete";
     bookContent.appendChild(bookTitle);
     bookContent.appendChild(bookInfo);
     bookButtons.appendChild(readButtonElem);
@@ -76,6 +91,7 @@ function createBook(book){
 }
 
 const updateBooks = () => {
+    libraryElem.innerHTML = '';
     for(let book of myLibrary.books){
         createBook(book);
     }
