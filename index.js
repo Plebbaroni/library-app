@@ -59,6 +59,19 @@ const deleteBook = (e) => {
     updateBooks();
 }
 
+const toggleReadStatus = (e) => {
+    const toggle = e.target.parentNode.firstChild;
+    if(toggleStatus === "False"){
+        toggle.textContent = "Read";
+        toggle.style.backgroundColor = "lightgreen";
+        toggleStatus = "True";
+    }else{
+        toggle.textContent = "Not Read";
+        toggle.style.backgroundColor = "red";
+        toggleStatus = "False";
+    }
+}
+
 addButton.onsubmit = addBookToLibrary;
 
 function createBook(book){
@@ -75,12 +88,15 @@ function createBook(book){
     bookButtons.classList.add('bookbuttons');
     bookTitle.classList.add('booktitle');
     bookInfo.classList.add('author');
-    //readButtonElem.onclick
+    toggleStatus = "False";
+    readButtonElem.style.backgroundColor = "red";
+    readButtonElem.onclick = toggleReadStatus;
     deleteButtonElem.onclick = deleteBook;
 
     bookTitle.textContent = `${book.title}`;
     bookInfo.textContent = `${book.author} | ${book.pages} pages`;
     deleteButtonElem.textContent = "Delete";
+    readButtonElem.textContent = "Not Read";
     bookContent.appendChild(bookTitle);
     bookContent.appendChild(bookInfo);
     bookButtons.appendChild(readButtonElem);
