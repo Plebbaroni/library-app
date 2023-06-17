@@ -22,6 +22,7 @@ class Library{
 }
 
 const myLibrary = new Library();
+const libraryElem = document.getElementById("library");
 
 const readButton = document.getElementById('read');
 const deleteButton = document.getElementById('delete');
@@ -39,6 +40,7 @@ const addBookToLibrary = (e) =>{
     e.preventDefault();
     const newBook = formToBook();
     myLibrary.addBookToLibrary(newBook);
+    console.log(`${myLibrary.books[0].title}`);
     updateBooks();
 }
 
@@ -61,7 +63,16 @@ function createBook(book){
     //readButtonElem.onclick = 
     //deleteButtonElem.onclick;
 
-    book
+    bookTitle.textContent = `${book.title}`;
+    bookInfo.textContent = `${book.author} | ${book.pages} pages`;
+
+    bookContent.appendChild(bookTitle);
+    bookContent.appendChild(bookInfo);
+    bookButtons.appendChild(readButtonElem);
+    bookButtons.appendChild(deleteButtonElem);
+    bookElem.appendChild(bookContent);
+    bookElem.appendChild(bookButtons);
+    libraryElem.appendChild(bookElem);
 }
 
 const updateBooks = () => {
